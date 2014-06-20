@@ -3,11 +3,6 @@ bin
 gen
 build/
 
-#Eclipse
-.project
-.classpath
-.settings
-
 #IntelliJ IDEA
 .idea
 *.iml
