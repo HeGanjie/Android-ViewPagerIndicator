@@ -130,6 +130,7 @@ public class IconPageIndicator extends HorizontalScrollView implements PageIndic
         int count = iconAdapter.getCount();
         for (int i = 0; i < count; i++) {
             ImageView view = new ImageView(getContext(), null, R.attr.vpiIconPageIndicatorStyle);
+            iconAdapter.onIndicatorCreate(view, i);
             view.setImageResource(iconAdapter.getIconResId(i));
             mIconsLayout.addView(view);
         }

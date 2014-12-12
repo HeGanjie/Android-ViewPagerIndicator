@@ -1,5 +1,7 @@
 package com.viewpagerindicator;
 
+import android.widget.ImageView;
+
 public interface IconPagerAdapter {
     /**
      * Get icon representing the page at {@code index} in the adapter.
@@ -8,4 +10,6 @@ public interface IconPagerAdapter {
 
     // From PagerAdapter
     int getCount();
+    
+    void onIndicatorCreate(ImageView view, int pos);
 }

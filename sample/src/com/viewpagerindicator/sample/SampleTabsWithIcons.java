@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.ImageView;
+
 import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -33,27 +35,30 @@ public class SampleTabsWithIcons extends FragmentActivity {
     }
 
     class GoogleMusicAdapter extends FragmentPagerAdapter implements IconPagerAdapter {
-        public GoogleMusicAdapter(FragmentManager fm) {
-            super(fm);
-        }
+    	public GoogleMusicAdapter(FragmentManager fm) {
+    		super(fm);
+    	}
 
-        @Override
-        public Fragment getItem(int position) {
-            return TestFragment.newInstance(CONTENT[position % CONTENT.length]);
-        }
+    	@Override
+    	public Fragment getItem(int position) {
+    		return TestFragment.newInstance(CONTENT[position % CONTENT.length]);
+    	}
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return CONTENT[position % CONTENT.length].toUpperCase();
-        }
+    	@Override
+    	public CharSequence getPageTitle(int position) {
+    		return CONTENT[position % CONTENT.length].toUpperCase();
+    	}
 
-        @Override public int getIconResId(int index) {
-          return ICONS[index];
-        }
+    	@Override public int getIconResId(int index) {
+    		return ICONS[index];
+    	}
 
-      @Override
-        public int getCount() {
-          return CONTENT.length;
-        }
+    	@Override
+    	public int getCount() {
+    		return CONTENT.length;
+    	}
+
+    	@Override
+    	public void onIndicatorCreate(ImageView view, int pos) { }
     }
 }
